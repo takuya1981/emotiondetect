@@ -1,1 +1,1 @@
-web: gunicorn app:emotiondetect --log-file=-
+web: gunicorn emotiondetect:app --log-file -
