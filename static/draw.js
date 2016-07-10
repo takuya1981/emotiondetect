@@ -15,8 +15,10 @@ function post() {
             data: JSON.stringify(conv3(cArray)),
             success: (data) => {
                 $('#result').text(data.result);
-                $('#similarity1').text('cry   (' +  data.rate[0] + ')');
-                $('#similarity2').text('smile (' +  data.rate[1] + ')');
+                $('#similarity1').text('cry       (' +  data.rate[0] + ')');
+                $('#similarity2').text('smile     (' +  data.rate[1] + ')');
+                $('#similarity3').text('surprised (' +  data.rate[2] + ')');
+                $('#similarity4').text('angry     (' +  data.rate[3] + ')');
             }
         });
     }

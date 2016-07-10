@@ -7,7 +7,7 @@ import tensorflow as tf
 import cv2
 
 
-NUM_CLASSES = 2
+NUM_CLASSES = 4
 IMAGE_SIZE = 28
 IMAGE_PIXELS = IMAGE_SIZE*IMAGE_SIZE*3
 
@@ -106,7 +106,7 @@ def emotion_api():
 
     o = recognize(a)
     print o
-    x = np.argsort(o)[::-1][:3]
+    x = np.argsort(o)[::-1]
     print x
     import random
 
@@ -117,6 +117,10 @@ def emotion_api():
         emotion = "cry"
     elif x[0] == 1:
         emotion = "smile"
+    elif x[0] == 2:
+        emotion = "surprised"
+    elif x[0] == 3:
+        emotion = "angry"
 
     result = {
         "result": emotion,
