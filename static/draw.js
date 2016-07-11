@@ -31,9 +31,13 @@ function conv3(colorImg){
         for (var j = 0; j < 28; j++){
             var idx1 = (i * 28 + j) * 4;
             var idx2 = (i * 28 + j) * 3;
-            array[idx2] = colorImg[idx1];
-            array[idx2+1] = colorImg[idx1+1];
-            array[idx2+2] = colorImg[idx1+2];
+            var r = colorImg[idx1];
+            var g = colorImg[idx1+1];
+            var b = colorImg[idx1+2];
+            var v = parseInt(( r*30 + g*59 + b*11) / 100);
+            array[idx2] = v;
+            array[idx2+1] = v;
+            array[idx2+2] = v;
         }
     }
     return array;
